@@ -1,8 +1,22 @@
 'use strict';
 
 //Complete this algo
-const isLoop = (linkedlist) => {
+const isLoop = (linkedlist, tortoise=linkedlist.head, hare=linkedlist.head.next, i=0) => {
 
+  console.log("TORTOISE", tortoise)
+  console.log("HARE", hare)
+  if(i===4)
+    return true
+  if(hare.next.next.next===null|| hare.next.next===null|| hare.next===null || hare===null){
+
+    console.log("TORTOISE", tortoise)
+    console.log("HARE", hare)
+    return false;}
+  if(tortoise.value === hare.value  ){
+    // console.log("TORTOISE", tortoise)
+    // console.log("HARE", hare)
+    return true;}
+  return isLoop(linkedlist, tortoise.next, hare.next.next.next, i++)
 };
 
 
